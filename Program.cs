@@ -1,5 +1,8 @@
-Televisao tv = new Televisao(55f);
+﻿Televisao tv = new Televisao(55f);
 Console.WriteLine($"A tv tem o tamanho {tv.Tamanho}");
+
+tv.AumentarVolume();
+Console.WriteLine($"Volume {tv.Volume}");
 
 tv.AumentarVolume();
 Console.WriteLine($"Volume {tv.Volume}");
