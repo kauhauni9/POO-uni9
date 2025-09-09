@@ -1,6 +1,8 @@
 public class Televisao
 {
     private const int VOL_MAX = 100;
+    private const int CANAL_MAX = 520;
+    private int CANAL_ANTES_DE_DESLIGAR = 0;
     public Televisao(float tamanho)
     {
         Tamanho = tamanho;
@@ -39,5 +41,51 @@ public class Televisao
     public void AtivarMudo()
     {
         Volume = 0;
+    }
+
+    public void LigarTV()
+    {
+        Estado = true;
+        Canal = CANAL_ANTES_DE_DESLIGAR;
+    }
+
+    public void DesligarTV()
+    {
+        Estado = false;
+        CANAL_ANTES_DE_DESLIGAR = Canal;
+    }
+
+    public void MudarCanalParaCima()
+    {
+        if(Canal > 520)
+        {
+            Console.WriteLine("Não existem mais canais.");
+        }
+        else{
+            Canal++;
+        }
+    }
+
+    public void MudarCanalParaBaixo()
+    {
+        if(Canal < 1)
+        {
+            Console.WriteLine("Não existem mais canais.");
+        }
+        else 
+        {
+            Canal--;
+        }
+    }
+
+    public void MudarDeCanalComCanalEspecifico(int NumeroCanal)
+    {
+        if(NumeroCanal < 1 || NumeroCanal > 520) {
+            Console.WriteLine("Canal Inválido!");
+        } 
+        else 
+        {
+            Canal = NumeroCanal;
+        }
     }
 }

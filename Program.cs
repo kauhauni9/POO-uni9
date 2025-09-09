@@ -1,14 +1,20 @@
 ﻿Televisao tv = new Televisao(55f);
 Console.WriteLine($"A tv tem o tamanho {tv.Tamanho}");
 
-tv.AumentarVolume();
-Console.WriteLine($"Volume {tv.Volume}");
+tv.MudarDeCanalComCanalEspecifico(520);
+Console.WriteLine($"Canal Selecionado {tv.Canal}");
 
-tv.AumentarVolume();
-Console.WriteLine($"Volume {tv.Volume}");
+tv.MudarCanalParaBaixo();
+Console.WriteLine($"Canal Selecionado {tv.Canal}");
 
-tv.DiminuirVolume();
-Console.WriteLine($"Volume {tv.Volume}");
+tv.MudarCanalParaBaixo();
+Console.WriteLine($"Canal Selecionado {tv.Canal}");
 
-tv.AtivarMudo();
-Console.WriteLine($"Volume {tv.Volume}");
+tv.MudarCanalParaCima();
+Console.WriteLine($"Canal Selecionado {tv.Canal}");
+
+tv.DesligarTV();
+Console.WriteLine("Canal Desligada");
+
+tv.LigarTV();
+Console.WriteLine($"Canal Selecionado {tv.Canal}");
